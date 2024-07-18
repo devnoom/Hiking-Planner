@@ -1,0 +1,24 @@
+{
+  "originHash" : "a1de59f24de9fd8809bf7c45a2fd3147e69235a058974b13f87736d248eddc6b",
+  "pins" : [
+    {
+      "identity" : "keychainaccess",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kishikawakatsumi/KeychainAccess.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "e0c7eebc5a4465a3c4680764f26b7a61f567cdaf"
+      }
+    },
+    {
+      "identity" : "networking",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/devnoom/Networking.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "f4f3b82bfa8db28b5f5778dbec869a79c9e15ceb"
+      }
+    }
+  ],
+  "version" : 3
+}

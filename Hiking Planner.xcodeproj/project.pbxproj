@@ -7,15 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0008E782C47E40A00A0FF80 /* HikingSpotDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0008E772C47E40A00A0FF80 /* HikingSpotDetailViewController.swift */; };
+		D0008E7A2C47E78100A0FF80 /* RoomDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0008E792C47E78100A0FF80 /* RoomDetailView.swift */; };
+		D0008E7C2C47F81200A0FF80 /* RoomDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0008E7B2C47F81200A0FF80 /* RoomDetailViewController.swift */; };
+		D0499E792C4554A000BF4191 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = D0499E782C4554A000BF4191 /* Networking */; };
+		D04D9CE12C400C6E009ADB44 /* HikingPlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04D9CE02C400C6E009ADB44 /* HikingPlannerApp.swift */; };
+		D04D9CE52C400D4E009ADB44 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04D9CE42C400D4E009ADB44 /* SearchView.swift */; };
+		D04D9CE92C400E3B009ADB44 /* StateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04D9CE82C400E3B009ADB44 /* StateViewController.swift */; };
+		D04D9CEB2C400E54009ADB44 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04D9CEA2C400E54009ADB44 /* SearchViewController.swift */; };
+		D0948C182C287BA6007A9207 /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0948C172C287BA6007A9207 /* Hotel.swift */; };
+		D0948C372C287DFA007A9207 /* MainTabBarControllerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0948C362C287DFA007A9207 /* MainTabBarControllerController.swift */; };
 		D098300F2C25B48F00A0FE7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D098300E2C25B48F00A0FE7C /* AppDelegate.swift */; };
 		D09830112C25B48F00A0FE7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09830102C25B48F00A0FE7C /* SceneDelegate.swift */; };
-		D09830132C25B48F00A0FE7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09830122C25B48F00A0FE7C /* ViewController.swift */; };
-		D09830162C25B48F00A0FE7C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D09830152C25B48F00A0FE7C /* Base */; };
 		D09830182C25B49100A0FE7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D09830172C25B49100A0FE7C /* Assets.xcassets */; };
 		D098301B2C25B49100A0FE7C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D098301A2C25B49100A0FE7C /* Base */; };
 		D09830262C25B49100A0FE7C /* Hiking_PlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09830252C25B49100A0FE7C /* Hiking_PlannerTests.swift */; };
 		D09830302C25B49100A0FE7C /* Hiking_PlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D098302F2C25B49100A0FE7C /* Hiking_PlannerUITests.swift */; };
 		D09830322C25B49100A0FE7C /* Hiking_PlannerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09830312C25B49100A0FE7C /* Hiking_PlannerUITestsLaunchTests.swift */; };
+		D098303F2C25B4F400A0FE7C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D098303E2C25B4F400A0FE7C /* HomeViewController.swift */; };
+		D0BA8DCF2C3D6B8A006CDD46 /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA8DCE2C3D6B8A006CDD46 /* CityViewModel.swift */; };
+		D0BA8DD12C3D6B93006CDD46 /* HotelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA8DD02C3D6B93006CDD46 /* HotelViewModel.swift */; };
+		D0BA8DD32C3D6BA0006CDD46 /* CarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA8DD22C3D6BA0006CDD46 /* CarViewModel.swift */; };
+		D0BA8DD52C3D6BAC006CDD46 /* HikingSpotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA8DD42C3D6BAC006CDD46 /* HikingSpotViewModel.swift */; };
+		D0BA8DD92C3D6C6C006CDD46 /* HikingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA8DD82C3D6C6C006CDD46 /* HikingViewController.swift */; };
+		D0BA8DDD2C3D6C8D006CDD46 /* HotelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA8DDC2C3D6C8D006CDD46 /* HotelsViewController.swift */; };
+		D0BA8DEC2C3D6F0A006CDD46 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = D0BA8DEB2C3D6F0A006CDD46 /* KeychainAccess */; };
+		D0BA8DEE2C3D70A3006CDD46 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA8DED2C3D70A3006CDD46 /* ContentView.swift */; };
+		D0BC811F2C46DD8900BA22E9 /* HotelDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC811E2C46DD8900BA22E9 /* HotelDetailView.swift */; };
+		D0BC81212C46DDA800BA22E9 /* HotelRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC81202C46DDA800BA22E9 /* HotelRowView.swift */; };
+		D0BC81242C46DDFB00BA22E9 /* HikingSpotDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC81232C46DDFB00BA22E9 /* HikingSpotDetailView.swift */; };
+		D0BC81262C46DE1300BA22E9 /* HikingSpotRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC81252C46DE1300BA22E9 /* HikingSpotRowView.swift */; };
+		D0BC81282C46DE6400BA22E9 /* HikingSpotListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC81272C46DE6400BA22E9 /* HikingSpotListView.swift */; };
+		D0BC812B2C46DEAF00BA22E9 /* CarDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC812A2C46DEAF00BA22E9 /* CarDetailView.swift */; };
+		D0BC812D2C46DECD00BA22E9 /* CarListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC812C2C46DECD00BA22E9 /* CarListView.swift */; };
+		D0BC812F2C46DEE300BA22E9 /* CarRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC812E2C46DEE300BA22E9 /* CarRowView.swift */; };
+		D0BC81312C46E27F00BA22E9 /* RentalCompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC81302C46E27F00BA22E9 /* RentalCompanyViewModel.swift */; };
+		D0BC81342C46E2BB00BA22E9 /* RentalCompanyRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC81332C46E2BB00BA22E9 /* RentalCompanyRowView.swift */; };
+		D0BC813A2C46E3FA00BA22E9 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC81392C46E3FA00BA22E9 /* Extension.swift */; };
+		D0BC813D2C46E44100BA22E9 /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC813C2C46E44100BA22E9 /* CarTableViewCell.swift */; };
+		D0BC81422C46E4FB00BA22E9 /* RentalCompanyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC81412C46E4FB00BA22E9 /* RentalCompanyListViewController.swift */; };
+		D0BC81442C46E53500BA22E9 /* CarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC81432C46E53500BA22E9 /* CarListViewController.swift */; };
+		D0BC81482C46EC0800BA22E9 /* RentalCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC81472C46EC0800BA22E9 /* RentalCompany.swift */; };
+		D0BC814B2C4717D600BA22E9 /* StateRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC814A2C4717D600BA22E9 /* StateRowView.swift */; };
+		D0BC81502C47181900BA22E9 /* RoomRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC814F2C47181900BA22E9 /* RoomRowView.swift */; };
+		D0BC81532C47186E00BA22E9 /* StateListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC81522C47186E00BA22E9 /* StateListViewController.swift */; };
+		D0BC81562C47189700BA22E9 /* HotelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC81552C47189700BA22E9 /* HotelListViewController.swift */; };
+		D0BC81592C4718BC00BA22E9 /* RoomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC81582C4718BC00BA22E9 /* RoomListViewController.swift */; };
+		D0BC815C2C471BF400BA22E9 /* HikingSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC815B2C471BF400BA22E9 /* HikingSpot.swift */; };
+		D0BC815F2C471C4E00BA22E9 /* DifficultyLevelRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC815E2C471C4E00BA22E9 /* DifficultyLevelRowView.swift */; };
+		D0BC81612C471C6300BA22E9 /* ModeOfTransportationRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC81602C471C6300BA22E9 /* ModeOfTransportationRowView.swift */; };
+		D0BC81642C471CC300BA22E9 /* DifficultyLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC81632C471CC300BA22E9 /* DifficultyLevelViewController.swift */; };
+		D0BC81662C471CE100BA22E9 /* ModeOfTransportationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC81652C471CE100BA22E9 /* ModeOfTransportationViewController.swift */; };
+		D0BC81682C471CFA00BA22E9 /* HikingSpotListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC81672C471CFA00BA22E9 /* HikingSpotListViewController.swift */; };
+		D0BC816B2C47218400BA22E9 /* HikingSpotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC816A2C47218400BA22E9 /* HikingSpotTableViewCell.swift */; };
+		D0D6FB6F2C4439AC007B6055 /* HotelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D6FB6E2C4439AC007B6055 /* HotelListView.swift */; };
+		D0D6FB732C443E03007B6055 /* HotelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D6FB722C443E03007B6055 /* HotelTableViewCell.swift */; };
+		D0E341112C383D4800CD2C4A /* StateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E341102C383D4800CD2C4A /* StateViewModel.swift */; };
+		D0E403A12C42C15E00CC1F9B /* HotelDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E403A02C42C15E00CC1F9B /* HotelDetailsViewController.swift */; };
+		D0E403A32C42DDB400CC1F9B /* CarRentalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E403A22C42DDB400CC1F9B /* CarRentalDetailViewController.swift */; };
+		D0F1DD502C46D18E00DEE1C2 /* CarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F1DD4F2C46D18E00DEE1C2 /* CarDetailViewController.swift */; };
+		D0F1DD522C46D1C500DEE1C2 /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F1DD512C46D1C500DEE1C2 /* CarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,11 +87,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D0008E772C47E40A00A0FF80 /* HikingSpotDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikingSpotDetailViewController.swift; sourceTree = "<group>"; };
+		D0008E792C47E78100A0FF80 /* RoomDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailView.swift; sourceTree = "<group>"; };
+		D0008E7B2C47F81200A0FF80 /* RoomDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailViewController.swift; sourceTree = "<group>"; };
+		D04D9CE02C400C6E009ADB44 /* HikingPlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikingPlannerApp.swift; sourceTree = "<group>"; };
+		D04D9CE42C400D4E009ADB44 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		D04D9CE82C400E3B009ADB44 /* StateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateViewController.swift; sourceTree = "<group>"; };
+		D04D9CEA2C400E54009ADB44 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		D0948C172C287BA6007A9207 /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
+		D0948C362C287DFA007A9207 /* MainTabBarControllerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarControllerController.swift; sourceTree = "<group>"; };
 		D098300B2C25B48F00A0FE7C /* Hiking Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hiking Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D098300E2C25B48F00A0FE7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D09830102C25B48F00A0FE7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D09830122C25B48F00A0FE7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D09830152C25B48F00A0FE7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D09830172C25B49100A0FE7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D098301A2C25B49100A0FE7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D098301C2C25B49100A0FE7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +107,48 @@
 		D098302B2C25B49100A0FE7C /* Hiking PlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hiking PlannerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D098302F2C25B49100A0FE7C /* Hiking_PlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hiking_PlannerUITests.swift; sourceTree = "<group>"; };
 		D09830312C25B49100A0FE7C /* Hiking_PlannerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hiking_PlannerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D098303E2C25B4F400A0FE7C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D0BA8DCE2C3D6B8A006CDD46 /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
+		D0BA8DD02C3D6B93006CDD46 /* HotelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelViewModel.swift; sourceTree = "<group>"; };
+		D0BA8DD22C3D6BA0006CDD46 /* CarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewModel.swift; sourceTree = "<group>"; };
+		D0BA8DD42C3D6BAC006CDD46 /* HikingSpotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikingSpotViewModel.swift; sourceTree = "<group>"; };
+		D0BA8DD82C3D6C6C006CDD46 /* HikingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikingViewController.swift; sourceTree = "<group>"; };
+		D0BA8DDC2C3D6C8D006CDD46 /* HotelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsViewController.swift; sourceTree = "<group>"; };
+		D0BA8DED2C3D70A3006CDD46 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D0BC811E2C46DD8900BA22E9 /* HotelDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailView.swift; sourceTree = "<group>"; };
+		D0BC81202C46DDA800BA22E9 /* HotelRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelRowView.swift; sourceTree = "<group>"; };
+		D0BC81232C46DDFB00BA22E9 /* HikingSpotDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikingSpotDetailView.swift; sourceTree = "<group>"; };
+		D0BC81252C46DE1300BA22E9 /* HikingSpotRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikingSpotRowView.swift; sourceTree = "<group>"; };
+		D0BC81272C46DE6400BA22E9 /* HikingSpotListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikingSpotListView.swift; sourceTree = "<group>"; };
+		D0BC812A2C46DEAF00BA22E9 /* CarDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailView.swift; sourceTree = "<group>"; };
+		D0BC812C2C46DECD00BA22E9 /* CarListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListView.swift; sourceTree = "<group>"; };
+		D0BC812E2C46DEE300BA22E9 /* CarRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRowView.swift; sourceTree = "<group>"; };
+		D0BC81302C46E27F00BA22E9 /* RentalCompanyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalCompanyViewModel.swift; sourceTree = "<group>"; };
+		D0BC81332C46E2BB00BA22E9 /* RentalCompanyRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalCompanyRowView.swift; sourceTree = "<group>"; };
+		D0BC81392C46E3FA00BA22E9 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		D0BC813C2C46E44100BA22E9 /* CarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
+		D0BC81412C46E4FB00BA22E9 /* RentalCompanyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalCompanyListViewController.swift; sourceTree = "<group>"; };
+		D0BC81432C46E53500BA22E9 /* CarListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewController.swift; sourceTree = "<group>"; };
+		D0BC81472C46EC0800BA22E9 /* RentalCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalCompany.swift; sourceTree = "<group>"; };
+		D0BC814A2C4717D600BA22E9 /* StateRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateRowView.swift; sourceTree = "<group>"; };
+		D0BC814F2C47181900BA22E9 /* RoomRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRowView.swift; sourceTree = "<group>"; };
+		D0BC81522C47186E00BA22E9 /* StateListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateListViewController.swift; sourceTree = "<group>"; };
+		D0BC81552C47189700BA22E9 /* HotelListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelListViewController.swift; sourceTree = "<group>"; };
+		D0BC81582C4718BC00BA22E9 /* RoomListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListViewController.swift; sourceTree = "<group>"; };
+		D0BC815B2C471BF400BA22E9 /* HikingSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikingSpot.swift; sourceTree = "<group>"; };
+		D0BC815E2C471C4E00BA22E9 /* DifficultyLevelRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyLevelRowView.swift; sourceTree = "<group>"; };
+		D0BC81602C471C6300BA22E9 /* ModeOfTransportationRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeOfTransportationRowView.swift; sourceTree = "<group>"; };
+		D0BC81632C471CC300BA22E9 /* DifficultyLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyLevelViewController.swift; sourceTree = "<group>"; };
+		D0BC81652C471CE100BA22E9 /* ModeOfTransportationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeOfTransportationViewController.swift; sourceTree = "<group>"; };
+		D0BC81672C471CFA00BA22E9 /* HikingSpotListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikingSpotListViewController.swift; sourceTree = "<group>"; };
+		D0BC816A2C47218400BA22E9 /* HikingSpotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikingSpotTableViewCell.swift; sourceTree = "<group>"; };
+		D0D6FB6E2C4439AC007B6055 /* HotelListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelListView.swift; sourceTree = "<group>"; };
+		D0D6FB722C443E03007B6055 /* HotelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelTableViewCell.swift; sourceTree = "<group>"; };
+		D0E341102C383D4800CD2C4A /* StateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateViewModel.swift; sourceTree = "<group>"; };
+		D0E403A02C42C15E00CC1F9B /* HotelDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailsViewController.swift; sourceTree = "<group>"; };
+		D0E403A22C42DDB400CC1F9B /* CarRentalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentalDetailViewController.swift; sourceTree = "<group>"; };
+		D0F1DD4F2C46D18E00DEE1C2 /* CarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailViewController.swift; sourceTree = "<group>"; };
+		D0F1DD512C46D1C500DEE1C2 /* CarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +156,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0499E792C4554A000BF4191 /* Networking in Frameworks */,
+				D0BA8DEC2C3D6F0A006CDD46 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +178,75 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D04D9CE22C400C9C009ADB44 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D0948C172C287BA6007A9207 /* Hotel.swift */,
+				D0BC81472C46EC0800BA22E9 /* RentalCompany.swift */,
+				D0BC815B2C471BF400BA22E9 /* HikingSpot.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D0948BFA2C287979007A9207 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D0A8C2422C4949DC000F599E /* SearchPage */,
+				D0A8C2412C4949CE000F599E /* HomePage */,
+				D0A8C2402C4949BD000F599E /* Main */,
+				D0BC81622C471CB500BA22E9 /* Hiking */,
+				D0BC81542C47188C00BA22E9 /* Hotel */,
+				D0BC81512C47186000BA22E9 /* State */,
+				D0BC81402C46E4E600BA22E9 /* RentalCompany */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D0948C012C287A15007A9207 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D0BA8DED2C3D70A3006CDD46 /* ContentView.swift */,
+				D0A8C23F2C494985000F599E /* Search */,
+				D0BC81492C4717C500BA22E9 /* State */,
+				D0BC81322C46E2B000BA22E9 /* RentalCompany */,
+				D0BC81222C46DDE400BA22E9 /* Hiking */,
+				D0BC811D2C46DD6E00BA22E9 /* Hotel */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D0948C022C287A1A007A9207 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D0E341102C383D4800CD2C4A /* StateViewModel.swift */,
+				D0BA8DCE2C3D6B8A006CDD46 /* CityViewModel.swift */,
+				D0BA8DD02C3D6B93006CDD46 /* HotelViewModel.swift */,
+				D0BA8DD22C3D6BA0006CDD46 /* CarViewModel.swift */,
+				D0BA8DD42C3D6BAC006CDD46 /* HikingSpotViewModel.swift */,
+				D0BC81302C46E27F00BA22E9 /* RentalCompanyViewModel.swift */,
+			);
+			name = ViewModels;
+			path = SWIFTUI/ViewModels;
+			sourceTree = "<group>";
+		};
+		D0948C352C287CD8007A9207 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D098300E2C25B48F00A0FE7C /* AppDelegate.swift */,
+				D09830102C25B48F00A0FE7C /* SceneDelegate.swift */,
+				D04D9CE02C400C6E009ADB44 /* HikingPlannerApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D0948C382C287E73007A9207 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D09830172C25B49100A0FE7C /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		D09830022C25B48F00A0FE7C = {
 			isa = PBXGroup;
 			children = (
@@ -99,11 +270,12 @@
 		D098300D2C25B48F00A0FE7C /* Hiking Planner */ = {
 			isa = PBXGroup;
 			children = (
-				D098300E2C25B48F00A0FE7C /* AppDelegate.swift */,
-				D09830102C25B48F00A0FE7C /* SceneDelegate.swift */,
-				D09830122C25B48F00A0FE7C /* ViewController.swift */,
-				D09830142C25B48F00A0FE7C /* Main.storyboard */,
-				D09830172C25B49100A0FE7C /* Assets.xcassets */,
+				D0948C382C287E73007A9207 /* Resources */,
+				D0948C352C287CD8007A9207 /* App */,
+				D04D9CE22C400C9C009ADB44 /* Models */,
+				D0948C022C287A1A007A9207 /* ViewModels */,
+				D0948C012C287A15007A9207 /* Views */,
+				D0948BFA2C287979007A9207 /* ViewControllers */,
 				D09830192C25B49100A0FE7C /* LaunchScreen.storyboard */,
 				D098301C2C25B49100A0FE7C /* Info.plist */,
 			);
@@ -127,6 +299,194 @@
 			path = "Hiking PlannerUITests";
 			sourceTree = "<group>";
 		};
+		D0A8C23F2C494985000F599E /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				D04D9CE42C400D4E009ADB44 /* SearchView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		D0A8C2402C4949BD000F599E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D0948C362C287DFA007A9207 /* MainTabBarControllerController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D0A8C2412C4949CE000F599E /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				D098303E2C25B4F400A0FE7C /* HomeViewController.swift */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		D0A8C2422C4949DC000F599E /* SearchPage */ = {
+			isa = PBXGroup;
+			children = (
+				D04D9CEA2C400E54009ADB44 /* SearchViewController.swift */,
+			);
+			path = SearchPage;
+			sourceTree = "<group>";
+		};
+		D0BC811D2C46DD6E00BA22E9 /* Hotel */ = {
+			isa = PBXGroup;
+			children = (
+				D0BC814E2C47180B00BA22E9 /* Room */,
+				D0D6FB6E2C4439AC007B6055 /* HotelListView.swift */,
+				D0BC811E2C46DD8900BA22E9 /* HotelDetailView.swift */,
+				D0BC81202C46DDA800BA22E9 /* HotelRowView.swift */,
+			);
+			path = Hotel;
+			sourceTree = "<group>";
+		};
+		D0BC81222C46DDE400BA22E9 /* Hiking */ = {
+			isa = PBXGroup;
+			children = (
+				D0BC81232C46DDFB00BA22E9 /* HikingSpotDetailView.swift */,
+				D0BC81252C46DE1300BA22E9 /* HikingSpotRowView.swift */,
+				D0BC81272C46DE6400BA22E9 /* HikingSpotListView.swift */,
+				D0BC815E2C471C4E00BA22E9 /* DifficultyLevelRowView.swift */,
+				D0BC81602C471C6300BA22E9 /* ModeOfTransportationRowView.swift */,
+			);
+			path = Hiking;
+			sourceTree = "<group>";
+		};
+		D0BC81292C46DE9D00BA22E9 /* Car */ = {
+			isa = PBXGroup;
+			children = (
+				D0BC812A2C46DEAF00BA22E9 /* CarDetailView.swift */,
+				D0BC812C2C46DECD00BA22E9 /* CarListView.swift */,
+				D0BC812E2C46DEE300BA22E9 /* CarRowView.swift */,
+			);
+			path = Car;
+			sourceTree = "<group>";
+		};
+		D0BC81322C46E2B000BA22E9 /* RentalCompany */ = {
+			isa = PBXGroup;
+			children = (
+				D0BC81332C46E2BB00BA22E9 /* RentalCompanyRowView.swift */,
+				D0BC81292C46DE9D00BA22E9 /* Car */,
+			);
+			path = RentalCompany;
+			sourceTree = "<group>";
+		};
+		D0BC81372C46E3A600BA22E9 /* Cars */ = {
+			isa = PBXGroup;
+			children = (
+				D0E403A22C42DDB400CC1F9B /* CarRentalDetailViewController.swift */,
+				D0F1DD4F2C46D18E00DEE1C2 /* CarDetailViewController.swift */,
+				D0F1DD512C46D1C500DEE1C2 /* CarViewController.swift */,
+				D0BC81432C46E53500BA22E9 /* CarListViewController.swift */,
+				D0BC81382C46E3C800BA22E9 /* Extension */,
+				D0BC813B2C46E42900BA22E9 /* Cell */,
+			);
+			path = Cars;
+			sourceTree = "<group>";
+		};
+		D0BC81382C46E3C800BA22E9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D0BC81392C46E3FA00BA22E9 /* Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		D0BC813B2C46E42900BA22E9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D0BC813C2C46E44100BA22E9 /* CarTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		D0BC81402C46E4E600BA22E9 /* RentalCompany */ = {
+			isa = PBXGroup;
+			children = (
+				D0BC81412C46E4FB00BA22E9 /* RentalCompanyListViewController.swift */,
+				D0BC81372C46E3A600BA22E9 /* Cars */,
+			);
+			path = RentalCompany;
+			sourceTree = "<group>";
+		};
+		D0BC81492C4717C500BA22E9 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				D0BC814A2C4717D600BA22E9 /* StateRowView.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		D0BC814E2C47180B00BA22E9 /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				D0BC814F2C47181900BA22E9 /* RoomRowView.swift */,
+				D0008E792C47E78100A0FF80 /* RoomDetailView.swift */,
+			);
+			path = Room;
+			sourceTree = "<group>";
+		};
+		D0BC81512C47186000BA22E9 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				D04D9CE82C400E3B009ADB44 /* StateViewController.swift */,
+				D0BC81522C47186E00BA22E9 /* StateListViewController.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		D0BC81542C47188C00BA22E9 /* Hotel */ = {
+			isa = PBXGroup;
+			children = (
+				D0BC81572C4718B100BA22E9 /* Room */,
+				D0BA8DDC2C3D6C8D006CDD46 /* HotelsViewController.swift */,
+				D0BC81552C47189700BA22E9 /* HotelListViewController.swift */,
+				D0E403A02C42C15E00CC1F9B /* HotelDetailsViewController.swift */,
+				D0BC815A2C4719ED00BA22E9 /* Cell */,
+			);
+			path = Hotel;
+			sourceTree = "<group>";
+		};
+		D0BC81572C4718B100BA22E9 /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				D0BC81582C4718BC00BA22E9 /* RoomListViewController.swift */,
+				D0008E7B2C47F81200A0FF80 /* RoomDetailViewController.swift */,
+			);
+			path = Room;
+			sourceTree = "<group>";
+		};
+		D0BC815A2C4719ED00BA22E9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D0D6FB722C443E03007B6055 /* HotelTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		D0BC81622C471CB500BA22E9 /* Hiking */ = {
+			isa = PBXGroup;
+			children = (
+				D0BC81692C47217100BA22E9 /* Cell */,
+				D0BA8DD82C3D6C6C006CDD46 /* HikingViewController.swift */,
+				D0BC81632C471CC300BA22E9 /* DifficultyLevelViewController.swift */,
+				D0BC81652C471CE100BA22E9 /* ModeOfTransportationViewController.swift */,
+				D0BC81672C471CFA00BA22E9 /* HikingSpotListViewController.swift */,
+				D0008E772C47E40A00A0FF80 /* HikingSpotDetailViewController.swift */,
+			);
+			path = Hiking;
+			sourceTree = "<group>";
+		};
+		D0BC81692C47217100BA22E9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D0BC816A2C47218400BA22E9 /* HikingSpotTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +503,10 @@
 			dependencies = (
 			);
 			name = "Hiking Planner";
+			packageProductDependencies = (
+				D0BA8DEB2C3D6F0A006CDD46 /* KeychainAccess */,
+				D0499E782C4554A000BF4191 /* Networking */,
+			);
 			productName = "Hiking Planner";
 			productReference = D098300B2C25B48F00A0FE7C /* Hiking Planner.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +579,10 @@
 				Base,
 			);
 			mainGroup = D09830022C25B48F00A0FE7C;
+			packageReferences = (
+				D0BA8DEA2C3D6EAE006CDD46 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				D0D6FB742C455202007B6055 /* XCRemoteSwiftPackageReference "Networking" */,
+			);
 			productRefGroup = D098300C2C25B48F00A0FE7C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,7 +601,6 @@
 			files = (
 				D09830182C25B49100A0FE7C /* Assets.xcassets in Resources */,
 				D098301B2C25B49100A0FE7C /* Base in Resources */,
-				D09830162C25B48F00A0FE7C /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +625,59 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D09830132C25B48F00A0FE7C /* ViewController.swift in Sources */,
+				D0948C372C287DFA007A9207 /* MainTabBarControllerController.swift in Sources */,
+				D04D9CEB2C400E54009ADB44 /* SearchViewController.swift in Sources */,
 				D098300F2C25B48F00A0FE7C /* AppDelegate.swift in Sources */,
+				D0D6FB732C443E03007B6055 /* HotelTableViewCell.swift in Sources */,
+				D0BC81662C471CE100BA22E9 /* ModeOfTransportationViewController.swift in Sources */,
+				D0BC81442C46E53500BA22E9 /* CarListViewController.swift in Sources */,
+				D04D9CE92C400E3B009ADB44 /* StateViewController.swift in Sources */,
+				D0BC812F2C46DEE300BA22E9 /* CarRowView.swift in Sources */,
+				D0008E782C47E40A00A0FF80 /* HikingSpotDetailViewController.swift in Sources */,
+				D0F1DD522C46D1C500DEE1C2 /* CarViewController.swift in Sources */,
+				D0BC81482C46EC0800BA22E9 /* RentalCompany.swift in Sources */,
+				D0BC813A2C46E3FA00BA22E9 /* Extension.swift in Sources */,
+				D0BC81312C46E27F00BA22E9 /* RentalCompanyViewModel.swift in Sources */,
+				D0BC815F2C471C4E00BA22E9 /* DifficultyLevelRowView.swift in Sources */,
+				D0BC81212C46DDA800BA22E9 /* HotelRowView.swift in Sources */,
+				D0BC81502C47181900BA22E9 /* RoomRowView.swift in Sources */,
+				D0BA8DD92C3D6C6C006CDD46 /* HikingViewController.swift in Sources */,
 				D09830112C25B48F00A0FE7C /* SceneDelegate.swift in Sources */,
+				D0008E7A2C47E78100A0FF80 /* RoomDetailView.swift in Sources */,
+				D0BC81642C471CC300BA22E9 /* DifficultyLevelViewController.swift in Sources */,
+				D0BA8DD32C3D6BA0006CDD46 /* CarViewModel.swift in Sources */,
+				D0BC81612C471C6300BA22E9 /* ModeOfTransportationRowView.swift in Sources */,
+				D0BA8DDD2C3D6C8D006CDD46 /* HotelsViewController.swift in Sources */,
+				D0BA8DD52C3D6BAC006CDD46 /* HikingSpotViewModel.swift in Sources */,
+				D0F1DD502C46D18E00DEE1C2 /* CarDetailViewController.swift in Sources */,
+				D0BC815C2C471BF400BA22E9 /* HikingSpot.swift in Sources */,
+				D04D9CE12C400C6E009ADB44 /* HikingPlannerApp.swift in Sources */,
+				D0BA8DEE2C3D70A3006CDD46 /* ContentView.swift in Sources */,
+				D0BA8DCF2C3D6B8A006CDD46 /* CityViewModel.swift in Sources */,
+				D0BC814B2C4717D600BA22E9 /* StateRowView.swift in Sources */,
+				D0BC81562C47189700BA22E9 /* HotelListViewController.swift in Sources */,
+				D0948C182C287BA6007A9207 /* Hotel.swift in Sources */,
+				D0D6FB6F2C4439AC007B6055 /* HotelListView.swift in Sources */,
+				D0BC81282C46DE6400BA22E9 /* HikingSpotListView.swift in Sources */,
+				D0BC81592C4718BC00BA22E9 /* RoomListViewController.swift in Sources */,
+				D0BC816B2C47218400BA22E9 /* HikingSpotTableViewCell.swift in Sources */,
+				D0BC812D2C46DECD00BA22E9 /* CarListView.swift in Sources */,
+				D0BC81422C46E4FB00BA22E9 /* RentalCompanyListViewController.swift in Sources */,
+				D0BC81342C46E2BB00BA22E9 /* RentalCompanyRowView.swift in Sources */,
+				D0BC81262C46DE1300BA22E9 /* HikingSpotRowView.swift in Sources */,
+				D0008E7C2C47F81200A0FF80 /* RoomDetailViewController.swift in Sources */,
+				D0E341112C383D4800CD2C4A /* StateViewModel.swift in Sources */,
+				D0E403A32C42DDB400CC1F9B /* CarRentalDetailViewController.swift in Sources */,
+				D04D9CE52C400D4E009ADB44 /* SearchView.swift in Sources */,
+				D0BC811F2C46DD8900BA22E9 /* HotelDetailView.swift in Sources */,
+				D0BA8DD12C3D6B93006CDD46 /* HotelViewModel.swift in Sources */,
+				D0BC81682C471CFA00BA22E9 /* HikingSpotListViewController.swift in Sources */,
+				D0BC81532C47186E00BA22E9 /* StateListViewController.swift in Sources */,
+				D0BC813D2C46E44100BA22E9 /* CarTableViewCell.swift in Sources */,
+				D0BC81242C46DDFB00BA22E9 /* HikingSpotDetailView.swift in Sources */,
+				D098303F2C25B4F400A0FE7C /* HomeViewController.swift in Sources */,
+				D0BC812B2C46DEAF00BA22E9 /* CarDetailView.swift in Sources */,
+				D0E403A12C42C15E00CC1F9B /* HotelDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +714,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D09830142C25B48F00A0FE7C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D09830152C25B48F00A0FE7C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D09830192C25B49100A0FE7C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -447,7 +856,6 @@
 				INFOPLIST_FILE = "Hiking Planner/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -475,7 +883,6 @@
 				INFOPLIST_FILE = "Hiking Planner/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -607,6 +1014,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D0BA8DEA2C3D6EAE006CDD46 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		D0D6FB742C455202007B6055 /* XCRemoteSwiftPackageReference "Networking" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devnoom/Networking.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D0499E782C4554A000BF4191 /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0D6FB742C455202007B6055 /* XCRemoteSwiftPackageReference "Networking" */;
+			productName = Networking;
+		};
+		D0BA8DEB2C3D6F0A006CDD46 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0BA8DEA2C3D6EAE006CDD46 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D09830032C25B48F00A0FE7C /* Project object */;
 }
