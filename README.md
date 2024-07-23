@@ -55,11 +55,8 @@ Hiking Planner is an iOS application designed to help users plan and explore var
 
 Contributions are welcome! If you have any suggestions or improvements, please create a pull request or open an issue.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
-If you have any questions or suggestions, feel free to contact me at [your.email@example.com](mailto:your.email@example.com).
+If you have any questions or suggestions, feel free to contact me at [your.email@example.com](archilmenabde@yahoo.com).
 
