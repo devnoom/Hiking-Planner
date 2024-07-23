@@ -7,16 +7,23 @@
 
 import UIKit
 import SwiftUI
+import Combine
 
-class HotelsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+// MARK: - Hotels View Controller
+final class HotelsViewController: UIViewController {
+    // MARK: - Properties
     private let tableView = UITableView()
     private var viewModel = HotelViewModel()
+    private var cancellables = Set<AnyCancellable>()
 
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        bindViewModel()
     }
 
+    // MARK: - UI Setup
     private func setupUI() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Hotels"
@@ -34,6 +41,19 @@ class HotelsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "HotelCell")
     }
 
+    // MARK: - Bind View Model
+    private func bindViewModel() {
+        viewModel.$hotels
+            .receive(on: RunLoop.main)
+            .sink { [weak self] _ in
+                self?.tableView.reloadData()
+            }
+            .store(in: &cancellables)
+    }
+}
+
+// MARK: - UITableView Delegate & DataSource
+extension HotelsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.hotels.count
     }
@@ -42,7 +62,7 @@ class HotelsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: "HotelCell", for: indexPath)
         let hotel = viewModel.hotels[indexPath.row]
 
-        let hotelRowView = HotelRowView(hotel: hotel)
+        let hotelRowView = HotelRowView(viewModel: viewModel, hotel: hotel)
         let hostingController = UIHostingController(rootView: hotelRowView)
         addChild(hostingController)
         cell.contentView.addSubview(hostingController.view)
@@ -60,7 +80,8 @@ class HotelsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let selectedHotel = viewModel.hotels[indexPath.row]
-        let roomListVC = RoomListViewController(rooms: selectedHotel.rooms, selectedHotel: selectedHotel)
+        let roomListViewModel = RoomViewModel(rooms: selectedHotel.rooms)
+        let roomListVC = RoomListViewController(viewModel: roomListViewModel, selectedHotel: selectedHotel)
         navigationController?.pushViewController(roomListVC, animated: true)
     }
 }

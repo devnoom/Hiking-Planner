@@ -7,42 +7,44 @@
 
 import SwiftUI
 
+// MARK: - Room Row View
 struct RoomRowView: View {
+    // MARK: - Properties
+    @ObservedObject var viewModel: RoomViewModel
     var room: Room
 
+    // MARK: - Body
     var body: some View {
-        VStack {
-            if let imageUrl = URL(string: room.picture) {
-                AsyncImage(url: imageUrl) { phase in
-                    if let image = phase.image {
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 150, height: 150)
-                    } else if phase.error != nil {
-                        Color.red // Indicates an error
-                            .frame(width: 150, height: 150)
-                    } else {
-                        ProgressView()
-                            .frame(width: 150, height: 150)
-                    }
+        HStack(alignment: .top) {
+            viewModel.loadImage(from: room.mainPicture, width: 100, height: 100)
+                .cornerRadius(8)
+                .clipped()
+
+            VStack(alignment: .leading) {
+                Text(room.name)
+                    .font(.headline)
+                Text("$\(room.price, specifier: "%.2f") per night")
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
+                HStack {
+                    Image(systemName: "bed.double.fill")
+                        .foregroundColor(.gray)
+                    Text("\(room.numberOfBeds) beds")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
                 }
-            } else {
-                ProgressView()
-                    .frame(width: 150, height: 150)
+                HStack {
+                    Image(systemName: "person.2.fill")
+                        .foregroundColor(.gray)
+                    Text("Capacity: \(room.numberOfPeople) people")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                }
             }
-            Text(room.name)
-                .font(.headline)
-                .padding(.top, 5)
-            Text("$\(room.price) per night")
-                .font(.subheadline)
+            .padding(.leading, 10)
+
+            Spacer()
         }
         .padding()
-    }
-}
-
-struct RoomRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        RoomRowView(room: Room(name: "Sample Room", price: 100.0, picture: "https://example.com/room.jpg", description: "A sample room description"))
     }
 }

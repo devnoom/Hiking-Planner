@@ -8,10 +8,15 @@
 import UIKit
 import SwiftUI
 
-class RoomDetailViewController: UIViewController {
+// MARK: - Room Detail View Controller
+final class RoomDetailViewController: UIViewController {
+    // MARK: - Properties
     private let room: Room
+    private let viewModel: RoomViewModel
 
-    init(room: Room) {
+    // MARK: - Initialization
+    init(viewModel: RoomViewModel, room: Room) {
+        self.viewModel = viewModel
         self.room = room
         super.init(nibName: nil, bundle: nil)
     }
@@ -20,16 +25,18 @@ class RoomDetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
 
+    // MARK: - UI Setup
     private func setupUI() {
         navigationItem.title = room.name
         view.backgroundColor = .white
 
-        let roomDetailView = RoomDetailView(room: room)
+        let roomDetailView = RoomDetailView(viewModel: viewModel, room: room)
         let hostingController = UIHostingController(rootView: roomDetailView)
         addChild(hostingController)
         view.addSubview(hostingController.view)

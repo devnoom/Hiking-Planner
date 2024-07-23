@@ -7,42 +7,33 @@
 
 import SwiftUI
 
+// MARK: - Rental Company Row View
 struct RentalCompanyRowView: View {
+    
+    @ObservedObject var viewModel: RentalCompanyViewModel
     var company: RentalCompany
 
     var body: some View {
-        VStack {
-            if let imageUrl = URL(string: company.image) {
-                AsyncImage(url: imageUrl) { phase in
-                    if let image = phase.image {
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 150, height: 150)
-                    } else if phase.error != nil {
-                        Color.red // Indicates an error
-                            .frame(width: 150, height: 150)
-                    } else {
-                        ProgressView()
-                            .frame(width: 150, height: 150)
+        HStack(alignment: .top) {
+            viewModel.image(for: company)
+            
+            VStack(alignment: .leading) {
+                Text(company.name)
+                    .font(.headline)
+                HStack {
+                    ForEach(0..<5) { index in
+                        Image(systemName: index < Int(viewModel.roundedRating(for: company)) ? "star.fill" : "star")
+                            .foregroundColor(index < Int(viewModel.roundedRating(for: company)) ? .yellow : .gray)
                     }
+                    Text(viewModel.ratingText(for: company))
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
                 }
-            } else {
-                ProgressView()
-                    .frame(width: 150, height: 150)
+                .padding(.top, 2)
             }
-            Text(company.name)
-                .font(.headline)
-                .padding(.top, 5)
-            HStack(spacing: 2) {
-                ForEach(0..<5) { index in
-                    Image(systemName: index < Int(company.rating) ? "star.fill" : "star")
-                        .foregroundColor(index < Int(company.rating) ? .yellow : .gray)
-                }
-                Text(String(format: "%.1f", company.rating))
-                    .font(.subheadline)
-            }
-            .padding(.top, 2)
+            .padding(.leading, 10)
+
+            Spacer()
         }
         .padding()
     }

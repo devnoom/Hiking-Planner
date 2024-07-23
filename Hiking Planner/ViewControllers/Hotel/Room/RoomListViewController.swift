@@ -7,14 +7,19 @@
 
 import UIKit
 import SwiftUI
+import Combine
 
-class RoomListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+// MARK: - Room List View Controller
+final class RoomListViewController: UIViewController {
+    // MARK: - Properties
     private let tableView = UITableView()
-    private let rooms: [Room]
+    @ObservedObject var viewModel: RoomViewModel
     private let selectedHotel: Hotel
+    private var cancellables = Set<AnyCancellable>()
 
-    init(rooms: [Room], selectedHotel: Hotel) {
-        self.rooms = rooms
+    // MARK: - Initialization
+    init(viewModel: RoomViewModel, selectedHotel: Hotel) {
+        self.viewModel = viewModel
         self.selectedHotel = selectedHotel
         super.init(nibName: nil, bundle: nil)
     }
@@ -23,11 +28,14 @@ class RoomListViewController: UIViewController, UITableViewDelegate, UITableView
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        bindViewModel()
     }
 
+    // MARK: - UI Setup
     private func setupUI() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = selectedHotel.name
@@ -45,15 +53,28 @@ class RoomListViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "RoomCell")
     }
 
+    // MARK: - ViewModel Binding
+    private func bindViewModel() {
+        viewModel.$rooms
+            .receive(on: RunLoop.main)
+            .sink { [weak self] _ in
+                self?.tableView.reloadData()
+            }
+            .store(in: &cancellables)
+    }
+}
+
+// MARK: - UITableViewDelegate & UITableViewDataSource
+extension RoomListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rooms.count
+        return viewModel.rooms.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RoomCell", for: indexPath)
-        let room = rooms[indexPath.row]
+        let room = viewModel.rooms[indexPath.row]
 
-        let roomRowView = RoomRowView(room: room)
+        let roomRowView = RoomRowView(viewModel: viewModel, room: room)
         let hostingController = UIHostingController(rootView: roomRowView)
         addChild(hostingController)
         cell.contentView.addSubview(hostingController.view)
@@ -70,8 +91,9 @@ class RoomListViewController: UIViewController, UITableViewDelegate, UITableView
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let selectedRoom = rooms[indexPath.row]
-        let roomDetailVC = RoomDetailViewController(room: selectedRoom)
+        let selectedRoom = viewModel.rooms[indexPath.row]
+        viewModel.selectRoom(selectedRoom)
+        let roomDetailVC = RoomDetailViewController(viewModel: viewModel, room: selectedRoom)
         navigationController?.pushViewController(roomDetailVC, animated: true)
     }
 }

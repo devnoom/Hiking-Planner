@@ -7,12 +7,15 @@
 
 import UIKit
 
-class CarRentalViewController: UIViewController {
+// MARK: - Car Rental View Controller
+final class CarRentalViewController: UIViewController {
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
 
+    // MARK: - UI Setup
     private func setupUI() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Rental Companies"
@@ -30,7 +33,3 @@ class CarRentalViewController: UIViewController {
         rentalCompanyListViewController.didMove(toParent: self)
     }
 }
-
-
-
-

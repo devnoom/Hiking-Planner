@@ -7,10 +7,13 @@
 
 import UIKit
 
-class HotelTableViewCell: UITableViewCell {
+// MARK: - Hotel Table View Cell
+final class HotelTableViewCell: UITableViewCell {
+    // MARK: - Properties
     private let nameLabel = UILabel()
     private let descriptionLabel = UILabel()
 
+    // MARK: - Initialization
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
@@ -20,6 +23,7 @@ class HotelTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - UI Setup
     private func setupUI() {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -39,9 +43,9 @@ class HotelTableViewCell: UITableViewCell {
         ])
     }
 
+    // MARK: - Configuration
     func configure(with hotel: Hotel) {
         nameLabel.text = hotel.name
         descriptionLabel.text = hotel.description
     }
 }
-

@@ -2,18 +2,21 @@
 //  CarListViewController.swift
 //  Hiking Planner
 //
-//  Created by MacBook Air on 16.07.24.
+//  Created by MacBook Air on 21.07.24.
 //
 
 import UIKit
 import SwiftUI
 
-class CarListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+// MARK: - Car List View Controller
+final class CarListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    // MARK: - Properties
     private let tableView = UITableView()
-    private var cars: [Car]
+    private let viewModel: CarViewModel
 
+    // MARK: - Initialization
     init(cars: [Car]) {
-        self.cars = cars
+        self.viewModel = CarViewModel(cars: cars)
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -21,11 +24,13 @@ class CarListViewController: UIViewController, UITableViewDelegate, UITableViewD
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
 
+    // MARK: - UI Setup
     private func setupUI() {
         navigationItem.title = "Cars"
         view.addSubview(tableView)
@@ -41,15 +46,18 @@ class CarListViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CarCell")
     }
 
+    // MARK: - UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cars.count
+        return viewModel.cars.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CarCell", for: indexPath)
-        let car = cars[indexPath.row]
+        let car = viewModel.cars[indexPath.row]
 
-        let carRowView = CarRowView(car: car)
+        cell.contentView.subviews.forEach { $0.removeFromSuperview() }
+
+        let carRowView = CarRowView(viewModel: viewModel, car: car)
         let hostingController = UIHostingController(rootView: carRowView)
         addChild(hostingController)
         cell.contentView.addSubview(hostingController.view)
@@ -64,11 +72,11 @@ class CarListViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
 
+    // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let selectedCar = cars[indexPath.row]
+        let selectedCar = viewModel.cars[indexPath.row]
         let carDetailViewController = CarDetailViewController(car: selectedCar)
         navigationController?.pushViewController(carDetailViewController, animated: true)
     }
 }
-

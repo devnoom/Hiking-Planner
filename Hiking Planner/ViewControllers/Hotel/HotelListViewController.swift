@@ -8,15 +8,19 @@
 import UIKit
 import SwiftUI
 
-class HotelListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+// MARK: - Hotel List View Controller
+final class HotelListViewController: UIViewController {
+    // MARK: - Properties
     private let tableView = UITableView()
     private var viewModel = HotelViewModel()
 
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
 
+    // MARK: - UI Setup
     private func setupUI() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Hotels"
@@ -33,7 +37,10 @@ class HotelListViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "HotelCell")
     }
+}
 
+// MARK: - UITableView Delegate & DataSource
+extension HotelListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.hotels.count
     }
@@ -42,7 +49,7 @@ class HotelListViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "HotelCell", for: indexPath)
         let hotel = viewModel.hotels[indexPath.row]
 
-        let hotelRowView = HotelRowView(hotel: hotel)
+        let hotelRowView = HotelRowView(viewModel: viewModel, hotel: hotel)
         let hostingController = UIHostingController(rootView: hotelRowView)
         addChild(hostingController)
         cell.contentView.addSubview(hostingController.view)
@@ -60,7 +67,8 @@ class HotelListViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let selectedHotel = viewModel.hotels[indexPath.row]
-        let roomListVC = RoomListViewController(rooms: selectedHotel.rooms, selectedHotel: selectedHotel)
+        let roomViewModel = RoomViewModel(rooms: selectedHotel.rooms)
+        let roomListVC = RoomListViewController(viewModel: roomViewModel, selectedHotel: selectedHotel)
         navigationController?.pushViewController(roomListVC, animated: true)
     }
 }

@@ -8,11 +8,14 @@
 import UIKit
 import Combine
 
-class CarViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+// MARK: - Car View Controller
+final class CarViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    // MARK: - Properties
     private let tableView = UITableView()
     private var viewModel = CarViewModel()
     private var cancellables = Set<AnyCancellable>()
 
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -20,6 +23,7 @@ class CarViewController: UIViewController, UITableViewDataSource, UITableViewDel
         bindViewModel()
     }
 
+    // MARK: - UI Setup
     private func setupUI() {
         navigationItem.title = "Cars"
         tableView.dataSource = self
@@ -36,12 +40,14 @@ class CarViewController: UIViewController, UITableViewDataSource, UITableViewDel
         ])
     }
     
+    // MARK: - Bind ViewModel
     private func bindViewModel() {
         viewModel.$cars.sink { [weak self] _ in
             self?.tableView.reloadData()
         }.store(in: &cancellables)
     }
 
+    // MARK: - UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.cars.count
     }

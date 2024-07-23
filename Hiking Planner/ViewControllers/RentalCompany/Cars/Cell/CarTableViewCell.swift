@@ -7,12 +7,15 @@
 
 import UIKit
 
-class CarTableViewCell: UITableViewCell {
+// MARK: - Car Table View Cell
+final class CarTableViewCell: UITableViewCell {
+    // MARK: - UI Components
     private let nameLabel = UILabel()
     private let priceLabel = UILabel()
     private let descriptionLabel = UILabel()
     private let carImageView = UIImageView()
 
+    // MARK: - Initialization
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
@@ -22,6 +25,7 @@ class CarTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - UI Setup
     private func setupUI() {
         carImageView.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -54,13 +58,13 @@ class CarTableViewCell: UITableViewCell {
         ])
     }
 
+    // MARK: - Configuration
     func configure(with car: Car) {
         nameLabel.text = car.name
-        priceLabel.text = "\(car.price) $/day"
+        priceLabel.text = "$\(car.price) per day"
         descriptionLabel.text = car.description
         if let imageUrl = URL(string: car.picture) {
             carImageView.loadImage(from: imageUrl)
         }
     }
 }
-

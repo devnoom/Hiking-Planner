@@ -2,17 +2,20 @@
 //  HikingSpotTableViewCell.swift
 //  Hiking Planner
 //
-//  Created by MacBook Air on 17.07.24.
+//  Created by MacBook Air on 21.07.24.
 //
 
 import UIKit
 
-class HikingSpotTableViewCell: UITableViewCell {
+// MARK: - Hiking Spot Table View Cell
+final class HikingSpotTableViewCell: UITableViewCell {
+    // MARK: - UI Components
+    private let spotImageView = UIImageView()
     private let nameLabel = UILabel()
-    private let ratingLabel = UILabel()
     private let descriptionLabel = UILabel()
-    private let hikingSpotImageView = UIImageView()
+    private var viewModel: HikingSpotViewModel?
 
+    // MARK: - Initialization
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
@@ -22,45 +25,47 @@ class HikingSpotTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - UI Setup
     private func setupUI() {
-        hikingSpotImageView.translatesAutoresizingMaskIntoConstraints = false
+        spotImageView.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        ratingLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        contentView.addSubview(hikingSpotImageView)
+
+        contentView.addSubview(spotImageView)
         contentView.addSubview(nameLabel)
-        contentView.addSubview(ratingLabel)
         contentView.addSubview(descriptionLabel)
-        
+
         NSLayoutConstraint.activate([
-            hikingSpotImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            hikingSpotImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            hikingSpotImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            hikingSpotImageView.widthAnchor.constraint(equalToConstant: 100),
-            
-            nameLabel.leadingAnchor.constraint(equalTo: hikingSpotImageView.trailingAnchor, constant: 8),
-            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            
-            ratingLabel.leadingAnchor.constraint(equalTo: hikingSpotImageView.trailingAnchor, constant: 8),
-            ratingLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 4),
-            ratingLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            
-            descriptionLabel.leadingAnchor.constraint(equalTo: hikingSpotImageView.trailingAnchor, constant: 8),
-            descriptionLabel.topAnchor.constraint(equalTo: ratingLabel.bottomAnchor, constant: 4),
-            descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
+            spotImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            spotImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            spotImageView.widthAnchor.constraint(equalToConstant: 50),
+            spotImageView.heightAnchor.constraint(equalToConstant: 50),
+
+            nameLabel.leadingAnchor.constraint(equalTo: spotImageView.trailingAnchor, constant: 10),
+            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+
+            descriptionLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
+            descriptionLabel.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
+            descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5),
+            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
         ])
     }
 
-    func configure(with hikingSpot: HikingSpot) {
-        nameLabel.text = hikingSpot.name
-        ratingLabel.text = "Rating: \(String(format: "%.1f", hikingSpot.rating))"
-        descriptionLabel.text = hikingSpot.description
+    // MARK: - Configuration
+    func configure(with hikingSpot: HikingSpot, viewModel: HikingSpotViewModel) {
+        self.viewModel = viewModel
         if let imageUrl = URL(string: hikingSpot.image) {
-            hikingSpotImageView.loadImage(from: imageUrl)
+            let task = URLSession.shared.dataTask(with: imageUrl) { data, _, _ in
+                if let data = data, let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self.spotImageView.image = image
+                    }
+                }
+            }
+            task.resume()
         }
+        nameLabel.text = hikingSpot.name
+        descriptionLabel.text = hikingSpot.description
     }
 }
-

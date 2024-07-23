@@ -9,7 +9,6 @@ import SwiftUI
 
 @main
 struct HikingPlannerApp: App {
-    // No MainTabBarView required here; we use the SceneDelegate to handle it.
     var body: some Scene {
         WindowGroup {
             ContentView()

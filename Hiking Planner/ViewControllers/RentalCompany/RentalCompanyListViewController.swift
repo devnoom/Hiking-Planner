@@ -8,15 +8,19 @@
 import UIKit
 import SwiftUI
 
-class RentalCompanyListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+// MARK: - Rental Company List View Controller
+final class RentalCompanyListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    // MARK: - Properties
     private let tableView = UITableView()
     private let viewModel = RentalCompanyViewModel()
 
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
 
+    // MARK: - UI Setup
     private func setupUI() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Rental Companies"
@@ -34,6 +38,7 @@ class RentalCompanyListViewController: UIViewController, UITableViewDelegate, UI
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CompanyCell")
     }
 
+    // MARK: - UITableViewDataSource Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.rentalCompanies.count
     }
@@ -42,8 +47,9 @@ class RentalCompanyListViewController: UIViewController, UITableViewDelegate, UI
         let cell = tableView.dequeueReusableCell(withIdentifier: "CompanyCell", for: indexPath)
         let company = viewModel.rentalCompanies[indexPath.row]
 
-        // Create the RentalCompanyRowView using SwiftUI
-        let companyRowView = RentalCompanyRowView(company: company)
+        cell.contentView.subviews.forEach { $0.removeFromSuperview() }
+
+        let companyRowView = RentalCompanyRowView(viewModel: viewModel, company: company)
         let hostingController = UIHostingController(rootView: companyRowView)
         addChild(hostingController)
         cell.contentView.addSubview(hostingController.view)
@@ -58,6 +64,7 @@ class RentalCompanyListViewController: UIViewController, UITableViewDelegate, UI
         return cell
     }
 
+    // MARK: - UITableViewDelegate Methods
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let selectedCompany = viewModel.rentalCompanies[indexPath.row]

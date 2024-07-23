@@ -7,34 +7,19 @@
 
 import SwiftUI
 
+// MARK: - Hotel Row View
 struct HotelRowView: View {
+    // MARK: - Properties
+    @ObservedObject var viewModel: HotelViewModel
     var hotel: Hotel
 
+    // MARK: - Body
     var body: some View {
-        HStack {
-            if let imageUrl = URL(string: hotel.image) {
-                AsyncImage(url: imageUrl) { phase in
-                    if let image = phase.image {
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 100, height: 100)
-                            .cornerRadius(8)
-                    } else if phase.error != nil {
-                        Color.red // Indicates an error
-                            .frame(width: 100, height: 100)
-                            .cornerRadius(8)
-                    } else {
-                        ProgressView()
-                            .frame(width: 100, height: 100)
-                            .cornerRadius(8)
-                    }
-                }
-            } else {
-                ProgressView()
-                    .frame(width: 100, height: 100)
-                    .cornerRadius(8)
-            }
+        HStack(alignment: .top) {
+            viewModel.loadImage(from: hotel.image, width: 100, height: 100)
+                .cornerRadius(8)
+                .clipped()
+
             VStack(alignment: .leading) {
                 Text(hotel.name)
                     .font(.headline)
@@ -50,14 +35,9 @@ struct HotelRowView: View {
                 .padding(.top, 2)
             }
             .padding(.leading, 10)
+
+            Spacer()
         }
         .padding()
-    }
-}
-
-struct HotelRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        HotelRowView(hotel: Hotel(name: "Sample Hotel", description: "A sample hotel description", image: "https://example.com/hotel.jpg", rating: 4.5, rooms: []))
-            .previewLayout(.sizeThatFits)
     }
 }

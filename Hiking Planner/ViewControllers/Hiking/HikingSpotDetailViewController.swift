@@ -8,11 +8,16 @@
 import UIKit
 import SwiftUI
 
-class HikingSpotDetailViewController: UIViewController {
+// MARK: - Hiking Spot Detail View Controller
+final class HikingSpotDetailViewController: UIViewController {
+    // MARK: - Properties
     private let hikingSpot: HikingSpot
+    private let viewModel: HikingSpotViewModel
 
-    init(hikingSpot: HikingSpot) {
+    // MARK: - Initialization
+    init(hikingSpot: HikingSpot, viewModel: HikingSpotViewModel) {
         self.hikingSpot = hikingSpot
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -20,16 +25,18 @@ class HikingSpotDetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
 
+    // MARK: - UI Setup
     private func setupUI() {
         navigationItem.title = hikingSpot.name
         view.backgroundColor = .white
 
-        let hikingSpotDetailView = HikingSpotDetailView(hikingSpot: hikingSpot)
+        let hikingSpotDetailView = HikingSpotDetailView(viewModel: viewModel, hikingSpot: hikingSpot)
         let hostingController = UIHostingController(rootView: hikingSpotDetailView)
         addChild(hostingController)
         view.addSubview(hostingController.view)
